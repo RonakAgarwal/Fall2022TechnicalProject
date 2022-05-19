@@ -9,7 +9,7 @@ Below are my answers to the technical problems given, with additional work being
 
 ### Think about what could be going wrong with our calculation. Think about a better way to evaluate this data. 
 
-The thing that is wrong with this calculation is the existence of significant outliers in the data. As the box plots show, there is one store that has a signficiantly higher priced shoe than the other stores, and there is one store that is recieving a much greater number of orders than the other stores. Given the volume of orders for the latter store (store 42) being extremely unrealistic at first glance, it is possible that there may be some error in the entry of the order information for the store. The higher priced store could feasibly be a high fashion store of some sorts, but it's shoe price detracts from an accurate representation of the AOV across the stores. 
+The thing that is wrong with this calculation is the existence of significant outliers in the data. As the box plots show, there is one store that has a signficiantly higher priced shoe than the other stores, and there is one store that is recieving a much greater number of orders than the other stores. Given the volume of orders for the latter store (store 42) being extremely unrealistic at first glance, it is possible that there may be some error in the entry of the order information for the store. The higher priced store could feasibly be a high fashion store of some sorts, but its shoe price detracts from an accurate representation of the AOV across the stores. 
 
 ![Alt text](/images/shoe_price.png?raw=true)
 ![Alt text](/images/order_size.png?raw=true)
