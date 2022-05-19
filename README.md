@@ -22,7 +22,7 @@ I would stick with the metric being the mean value of each order, as it should g
 
 ### What is its value?
 
-The value of the mean after the outliers are removed is $300.00
+The value of the mean after the outliers are removed is **$300.00**
 
 ## Problem 2
 
