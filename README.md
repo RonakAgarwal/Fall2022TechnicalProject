@@ -14,7 +14,7 @@ The thing that is wrong with this calculation is the existence of significant ou
 ![Alt text](/images/shoe_price.png?raw=true)
 ![Alt text](/images/order_size.png?raw=true)
 
-A better way to evaluate the data would be to remove these outliers from the data set and calculate the average order value from there. 
+A better way to evaluate the data would be to remove outliers (3 standard deviations from the median) from the data set and calculate the average order value from there. 
 
 ### What metric would you report for this dataset?
 
@@ -23,3 +23,41 @@ I would stick with the metric being the mean value of each order, as it should g
 ### What is its value?
 
 The value of the mean after the outliers are removed is $300.00
+
+## Problem 2
+
+#### For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
+
+### How many orders were shipped by Speedy Express in total?
+
+SELECT Count(Orders.OrderID)
+FROM Orders, Shippers 
+WHERE Orders.ShipperID = Shippers.ShipperID 
+AND ShipperName = 'Speedy Express'
+
+##### Answer: 54
+
+### What is the last name of the employee with the most orders?
+
+SELECT Count(Orders.OrderID) as OrderCount, Employees.LastName
+FROM Employees, Orders
+WHERE Orders.EmployeeID = Employees.EmployeeID
+GROUP BY Employees.LastName
+ORDER BY OrderCount desc
+LIMIT 1
+
+##### Answer: Peacock
+
+### What product was ordered the most by customers in Germany?
+
+SELECT Products.ProductName, SUM(OrderDetails.Quantity) as Quantity
+FROM Customers, Products, Orders, OrderDetails
+WHERE Customers.CustomerID = Orders.CustomerID
+AND Orders.OrderID = OrderDetails.OrderID
+AND OrderDetails.ProductID = Products.ProductID
+AND Customers.Country = 'Germany'
+GROUP BY Products.ProductName
+ORDER BY Quantity DESC
+LIMIT 1
+
+##### Answer: Boston Crab Meat
